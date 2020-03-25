@@ -2,7 +2,7 @@
   <div class="product">
     <b-container fluid class="container-color px-0">
       <b-row class="remove-row-margin custom-row-w mx-auto">
-        <b-col lg="9" md="12" class="pl-0">
+        <b-col lg="9" md="12">
           <b-row class="mb-3">
             <b-col cols="12">
               <b-card class="remove-p-card-body mt-5">
