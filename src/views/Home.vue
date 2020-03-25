@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div style="" class="wrapper">
-      <b-container fluid :class="contentClass">
+      <b-container fluid class="p-0 content-mt custom-container">
         <b-row class="m-0 py-3">
           <b-col
             lg="2"
@@ -50,7 +50,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://picsum.photos/1024/500/?image=5"
+                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/Slider-3.jpg"
                       alt="image slot"
                     />
                   </template>
@@ -62,7 +62,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://picsum.photos/1024/500/?image=4"
+                      src="https://ng.jumia.is/cms/Homepage/2020/W13/upd-techweek_wof4.jpg"
                       alt="image slot"
                     />
                   </template>
@@ -73,7 +73,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://picsum.photos/1024/500/?image=3"
+                      src="https://ng.jumia.is/cms/Homepage/2020/W13/DailyEssentials.jpg"
                       alt="image slot"
                     />
                   </template>
@@ -85,7 +85,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://picsum.photos/1024/500/?image=2"
+                      src="https://ng.jumia.is/cms/8-18/stay-safe/updated/s-ss.jpg"
                       alt="image slot"
                     />
                   </template>
@@ -96,7 +96,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://picsum.photos/1024/500/?image=1"
+                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/NG_W13_S_WED_TECHWEEK_1.jpg"
                       alt="image slot"
                     />
                   </template>
@@ -206,10 +206,14 @@
           <b-col cols="2" class="p-0 pr-3 d-none d-sm-none d-lg-block">
             <b-row class="m-0">
               <b-col cols="12 p-0">
-                <b-card class="mb-3 card-right-height"></b-card>
+                <b-card
+                  class="mb-3 card-right-height card-right-background"
+                ></b-card>
               </b-col>
               <b-col cols="12 p-0">
-                <b-card class="card-right-height"></b-card>
+                <b-card
+                  class="card-right-height card-right-background-2"
+                ></b-card>
               </b-col>
             </b-row>
           </b-col>
@@ -288,6 +292,14 @@ export default {
 <style scoped>
 .wrapper {
   background-image: url('https://ng.jumia.is/cms/8-18/fashion-frenzy/BG-FF.jpg');
+}
+.card-right-background {
+  background-image: url('https://ng.jumia.is//cms/Homepage/2020/W13/1TechWeek_BSB_2pm+9pm-(1).gif');
+  background-size: contain;
+}
+.card-right-background-2 {
+  background-image: url('https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1554737513/woocommerce_kqwhux.png');
+  background-size: contain;
 }
 .custom-container {
   max-width: 1200px;
