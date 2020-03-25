@@ -7,7 +7,7 @@
             <b-col cols="12">
               <b-card class="remove-p-card-body mt-5">
                 <b-row class="remove-row-margin p-3">
-                  <b-col lg="4" md="6" sm="12" class="p-0">
+                  <b-col lg="4" md="6" sm="12" class="p-0 image-fit">
                     <b-img
                       thumbnail
                       fluid
@@ -141,6 +141,9 @@
 <style scoped>
 .product {
   margin-top: 62px;
+}
+.image-fit img {
+  width: 100%;
 }
 .container-color {
   background-color: #f5f5f5;
