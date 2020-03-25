@@ -15,7 +15,7 @@
                       alt="Image 1"
                     ></b-img>
                   </b-col>
-                  <b-col lg="8" md="6" class="p-0 pl-2 mb-3">
+                  <b-col lg="8" md="6" class="p-0 pl-4 mb-3">
                     <h5>
                       {{ product.name }}
                     </h5>
