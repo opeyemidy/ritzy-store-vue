@@ -5,20 +5,27 @@
         <b-col lg="9" md="12" class="pl-0">
           <b-row class="mb-3">
             <b-col cols="12">
-              <b-card class="remove-p-card-body">
-                <b-row class="remove-row-margin">
-                  <b-col lg="4" md="6" sm="12" class="p-0 mb-5">
-                    <ProductZoomer
-                      :base-images="images"
-                      :base-zoomer-options="zoomerOptions"
-                    />
+              <b-card class="remove-p-card-body mt-5">
+                <b-row class="remove-row-margin p-3">
+                  <b-col lg="4" md="6" sm="12" class="p-0">
+                    <b-img
+                      thumbnail
+                      fluid
+                      :src="product.pics"
+                      alt="Image 1"
+                    ></b-img>
                   </b-col>
-                  <b-col lg="8" md="6" class="p-0 pl-5 mb-3">
+                  <b-col lg="8" md="6" class="p-0 pl-2 mb-3">
                     <h5>
                       {{ product.name }}
                     </h5>
                     <hr />
                     <div>₦ {{ product.price }}</div>
+                    <div class="mt-3">
+                      <b-button variant="danger">
+                        add to cart
+                      </b-button>
+                    </div>
                   </b-col>
                 </b-row>
               </b-card>
@@ -110,7 +117,7 @@
           </b-row>
         </b-col>
         <b-col cols="3" class="px-0 mb-5 d-none d-lg-block">
-          <b-card class="remove-p-card-body p-3"
+          <b-card class="remove-p-card-body p-3 mt-5"
             >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
             cumque commodi eveniet vel dolorum quae rerum in ut atque aliquam
             enim dolor officiis, rem, ullam et eius quisquam quasi harum. Id,
@@ -153,68 +160,7 @@ export default {
   name: 'app',
   data() {
     return {
-      productdetails: [],
-      images: {
-        thumbs: [
-          {
-            id: 1,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/93/616663/3.jpg?9511'
-          },
-          {
-            id: 2,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/93/616663/4.jpg?9511'
-          },
-          {
-            id: 3,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/93/616663/5.jpg?9511'
-          }
-        ],
-        normal_size: [
-          {
-            id: 1,
-            url: '/shoeone_resize.png'
-          },
-          {
-            id: 2,
-            url: '/shoetwo_resize.png'
-          },
-          {
-            id: 3,
-            url: 'shoethree_resize.png'
-          }
-        ],
-        large_size: [
-          {
-            id: 1,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/93/616663/3.jpg?9511'
-          },
-          {
-            id: 2,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/93/616663/4.jpg?9511'
-          },
-          {
-            id: 3,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/93/616663/5.jpg?9511'
-          }
-        ]
-      },
-      zoomerOptions: {
-        zoomFactor: 3,
-        pane: 'pane',
-        hoverDelay: 300,
-        namespace: 'zoomer-bottom',
-        move_by_click: true,
-        scroll_items: 3,
-        choosed_thumb_border_color: '#dd2c00',
-        scroller_position: 'bottom',
-        zoomer_pane_position: 'right'
-      }
+      productdetails: []
     }
   },
   computed: {
