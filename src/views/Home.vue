@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <div style="" class="wrapper">
-      <b-container
-        fluid
-        class="p-0 content-mt custom-container d-none d-md-block"
-      >
+      <b-container fluid :class="contentClass">
         <b-row class="m-0 py-3">
           <b-col
             lg="2"
@@ -53,7 +50,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/Slider-3.jpg"
+                      src="https://picsum.photos/1024/500/?image=5"
                       alt="image slot"
                     />
                   </template>
@@ -65,7 +62,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/upd-techweek_wof4.jpg"
+                      src="https://picsum.photos/1024/500/?image=4"
                       alt="image slot"
                     />
                   </template>
@@ -76,7 +73,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/DailyEssentials.jpg"
+                      src="https://picsum.photos/1024/500/?image=3"
                       alt="image slot"
                     />
                   </template>
@@ -88,7 +85,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/8-18/stay-safe/updated/s-ss.jpg"
+                      src="https://picsum.photos/1024/500/?image=2"
                       alt="image slot"
                     />
                   </template>
@@ -99,7 +96,7 @@
                   <template v-slot:img>
                     <img
                       class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/NG_W13_S_WED_TECHWEEK_1.jpg"
+                      src="https://picsum.photos/1024/500/?image=1"
                       alt="image slot"
                     />
                   </template>
@@ -209,203 +206,10 @@
           <b-col cols="2" class="p-0 pr-3 d-none d-sm-none d-lg-block">
             <b-row class="m-0">
               <b-col cols="12 p-0">
-                <b-card
-                  class="mb-3 card-right-height card-right-background"
-                ></b-card>
+                <b-card class="mb-3 card-right-height"></b-card>
               </b-col>
               <b-col cols="12 p-0">
-                <b-card
-                  class="card-right-height card-right-background-2"
-                ></b-card>
-              </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
-      </b-container>
-      <b-container fluid class="p-0 content-mt custom-container d-md-none">
-        <b-row class="m-0 hide-sm-overflow">
-          <b-col cols="12" class="p-0">
-            <b-row class="px-3 py-0">
-              <b-carousel
-                id="carousel-1"
-                v-model="slide"
-                :interval="3000"
-                fade
-                controls
-                indicators
-                background="#ababab"
-                style="text-shadow: 1px 1px 2px #333; width: 100%;"
-                @sliding-start="onSlideStart"
-                @sliding-end="onSlideEnd"
-              >
-                <!-- Text slides with image -->
-                <b-carousel-slide>
-                  <template v-slot:img>
-                    <img
-                      class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/Slider-3.jpg"
-                      alt="image slot"
-                    />
-                  </template>
-                </b-carousel-slide>
-
-                <!-- Slides with custom text -->
-                <b-carousel-slide>
-                  <template v-slot:img>
-                    <img
-                      class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/upd-techweek_wof4.jpg"
-                      alt="image slot"
-                    />
-                  </template>
-                </b-carousel-slide>
-
-                <!-- Slides with image only -->
-                <b-carousel-slide>
-                  <template v-slot:img>
-                    <img
-                      class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/DailyEssentials.jpg"
-                      alt="image slot"
-                    />
-                  </template>
-                </b-carousel-slide>
-
-                <!-- Slides with img slot -->
-                <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-                <b-carousel-slide>
-                  <template v-slot:img>
-                    <img
-                      class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/8-18/stay-safe/updated/s-ss.jpg"
-                      alt="image slot"
-                    />
-                  </template>
-                </b-carousel-slide>
-
-                <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-                <b-carousel-slide>
-                  <template v-slot:img>
-                    <img
-                      class="d-block img-fluid w-100 carousel-container-height"
-                      src="https://ng.jumia.is/cms/Homepage/2020/W13/Wednesday/NG_W13_S_WED_TECHWEEK_1.jpg"
-                      alt="image slot"
-                    />
-                  </template>
-                </b-carousel-slide>
-              </b-carousel>
-            </b-row>
-            <b-row>
-              <b-col cols="12" class="py-0">
-                <b-card header="Featured Products" class="my-card-title">
-                  <b-row>
-                    <b-col
-                      lg="3"
-                      md="4"
-                      cols="6"
-                      v-for="product in products"
-                      :key="product.name"
-                      class="p-0 px-3 pb-3"
-                    >
-                      <a @click="gotoProduct(product)" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text> ₦ {{ product.price }} </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
-                    </b-col>
-                  </b-row>
-                </b-card>
-              </b-col>
-            </b-row>
-            <b-row class="mt-3">
-              <b-col cols="12" class="py-0">
-                <b-card
-                  header="Flash Sales"
-                  class="my-card-title flash-sales-title"
-                >
-                  <b-row>
-                    <b-col
-                      lg="3"
-                      md="4"
-                      cols="6"
-                      v-for="product in products"
-                      :key="product.name"
-                      class="p-0 px-3 pb-3"
-                    >
-                      <a @click="gotoProduct(product)" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text> ₦ {{ product.price }} </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
-                    </b-col>
-                  </b-row>
-                </b-card>
-              </b-col>
-            </b-row>
-            <b-row class="mt-3">
-              <b-col cols="12" class="py-0">
-                <b-card
-                  header="Store Recommendation"
-                  class="my-card-title recommendation-sales-title"
-                >
-                  <b-row>
-                    <b-col
-                      lg="3"
-                      md="4"
-                      cols="6"
-                      v-for="product in products"
-                      :key="product.name"
-                      class="p-0 px-3 pb-3"
-                    >
-                      <a @click="gotoProduct(product)" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text> ₦ {{ product.price }} </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
-                    </b-col>
-                  </b-row>
-                </b-card>
-              </b-col>
-            </b-row>
-          </b-col>
-          <b-col cols="2" class="p-0 pr-3 d-none d-sm-none d-lg-block">
-            <b-row class="m-0">
-              <b-col cols="12 p-0">
-                <b-card
-                  class="mb-3 card-right-height card-right-background"
-                ></b-card>
-              </b-col>
-              <b-col cols="12 p-0">
-                <b-card
-                  class="card-right-height card-right-background-2"
-                ></b-card>
+                <b-card class="card-right-height"></b-card>
               </b-col>
             </b-row>
           </b-col>
@@ -485,20 +289,11 @@ export default {
 .wrapper {
   background-image: url('https://ng.jumia.is/cms/8-18/fashion-frenzy/BG-FF.jpg');
 }
-.card-right-background {
-  background-image: url('https://ng.jumia.is//cms/Homepage/2020/W13/1TechWeek_BSB_2pm+9pm-(1).gif');
-  background-size: contain;
-}
-.card-right-background-2 {
-  background-image: url('https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1554737513/woocommerce_kqwhux.png');
-  background-size: contain;
-}
 .custom-container {
   max-width: 1200px;
 }
 .content-mt {
-  top: 56px;
-  position: relative;
+  margin-top: 62px;
 }
 .category-wrapper {
   position: -webkit-sticky;
@@ -551,8 +346,5 @@ export default {
 }
 .md-mt-height {
   margin-top: 56px;
-}
-.hide-sm-overflow {
-  overflow-x: hidden;
 }
 </style>
