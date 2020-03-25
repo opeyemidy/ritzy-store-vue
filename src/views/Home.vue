@@ -247,8 +247,7 @@
                       alt="image slot"
                     />
                   </template>
-                  ></b-carousel-slide
-                >
+                </b-carousel-slide>
 
                 <!-- Slides with custom text -->
                 <b-carousel-slide>
@@ -498,7 +497,8 @@ export default {
   max-width: 1200px;
 }
 .content-mt {
-  margin-top: 56px;
+  top: 56px;
+  position: relative;
 }
 .category-wrapper {
   position: -webkit-sticky;

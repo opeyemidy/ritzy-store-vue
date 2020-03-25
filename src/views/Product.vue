@@ -20,10 +20,13 @@
                       {{ product.name }}
                     </h5>
                     <hr />
-                    <div>₦ {{ product.price }}</div>
+                    <div>
+                      <h4>₦ {{ product.price }}</h4>
+                    </div>
+                    <hr />
                     <div class="mt-3">
-                      <b-button variant="danger">
-                        add to cart
+                      <b-button variant="danger" block>
+                        ADD TO CART
                       </b-button>
                     </div>
                   </b-col>
@@ -140,7 +143,8 @@
 </template>
 <style scoped>
 .product {
-  margin-top: 62px;
+  top: 56px;
+  position: relative;
 }
 .image-fit img {
   width: 100%;
