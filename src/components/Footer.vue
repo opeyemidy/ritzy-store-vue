@@ -69,22 +69,26 @@
           </b-row>
         </b-col>
       </b-row>
-      <b-row class="mx-2 mt-3 mb-5">
+      <b-row class="mx-2 mt-3 mb-5 d-md-none">
         <b-col lg="3" md="6" sm="12" class="text-left">
           <h5 class="heading-title mb-3">JOIN US ON</h5>
-          <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
+          <font-awesome-layers full-width class="" style="font-size: 1.3em">
             <font-awesome-icon :icon="['fab', 'facebook-f']" />
           </font-awesome-layers>
-          <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
+          <span class="p-3"></span>
+          <font-awesome-layers full-width class="" style="font-size: 1.3em">
             <font-awesome-icon :icon="['fab', 'twitter']" />
           </font-awesome-layers>
-          <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
+          <span class="p-3"></span>
+          <font-awesome-layers full-width class="" style="font-size: 1.3em">
             <font-awesome-icon :icon="['fab', 'youtube']" />
           </font-awesome-layers>
-          <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
+          <span class="p-3"></span>
+          <font-awesome-layers full-width class="" style="font-size: 1.3em">
             <font-awesome-icon :icon="['fab', 'instagram']" />
           </font-awesome-layers>
-          <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
+          <span class="p-3"></span>
+          <font-awesome-layers full-width class="" style="font-size: 1.3em">
             <font-awesome-icon icon="shopping-cart" />
           </font-awesome-layers>
         </b-col>
@@ -92,6 +96,35 @@
           <h5 class="heading-title mb-3">METHODS & DELIVERY PARTNERS</h5>
         </b-col>
       </b-row>
+      <div class="d-none d-md-block">
+        <b-row class="mx-5 mt-3 mb-5">
+          <b-col lg="3" md="6" sm="12" class="text-left">
+            <h5 class="heading-title mb-3">JOIN US ON</h5>
+            <font-awesome-layers full-width class="" style="font-size: 1.3em">
+              <font-awesome-icon :icon="['fab', 'facebook-f']" />
+            </font-awesome-layers>
+            <span class="p-3"></span>
+            <font-awesome-layers full-width class="" style="font-size: 1.3em">
+              <font-awesome-icon :icon="['fab', 'twitter']" />
+            </font-awesome-layers>
+            <span class="p-3"></span>
+            <font-awesome-layers full-width class="" style="font-size: 1.3em">
+              <font-awesome-icon :icon="['fab', 'youtube']" />
+            </font-awesome-layers>
+            <span class="p-3"></span>
+            <font-awesome-layers full-width class="" style="font-size: 1.3em">
+              <font-awesome-icon :icon="['fab', 'instagram']" />
+            </font-awesome-layers>
+            <span class="p-3"></span>
+            <font-awesome-layers full-width class="" style="font-size: 1.3em">
+              <font-awesome-icon icon="shopping-cart" />
+            </font-awesome-layers>
+          </b-col>
+          <b-col lg="9" md="6" sm="6" class="text-left d-none d-md-block">
+            <h5 class="heading-title mb-3">METHODS & DELIVERY PARTNERS</h5>
+          </b-col>
+        </b-row>
+      </div>
       <hr
         style="background-color: rgb(85, 85, 86); margin: 0;"
         class="px-5 mx-5"
