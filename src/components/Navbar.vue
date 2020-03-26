@@ -66,8 +66,8 @@ export default {
   data() {
     return {
       mainProps: {
-        width: 30,
-        height: 30,
+        width: 20,
+        height: 20,
         class: 'm1'
       }
     }

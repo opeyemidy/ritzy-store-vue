@@ -6,7 +6,7 @@
           <b-row class="mb-3">
             <b-col cols="12">
               <b-card class="remove-p-card-body mt-5">
-                <b-row class="remove-row-margin p-3">
+                <b-row class="remove-row-margin px-3 pt-3 pb-0">
                   <b-col lg="4" md="6" sm="12" class="p-0 image-fit">
                     <b-img
                       thumbnail
@@ -14,18 +14,151 @@
                       :src="product.pics"
                       alt="Image 1"
                     ></b-img>
+                    <div class="custom-thumb">
+                      <div class="thumbholder">
+                        <b-row class="thumb-custom-p m-0">
+                          <b-col
+                            v-for="image in product.images"
+                            :key="image.name"
+                            cols="2"
+                            class="p-0"
+                            ><img :src="image.name" alt=""
+                          /></b-col>
+                          <!-- <b-col cols="2" class="p-0"
+                            ><img
+                              src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/02/486062/2.jpg?7638"
+                              alt="product_image_name-Fashion-Elegant Designer Athletic Sneakers V2- Gold &amp; Black-1"
+                          /></b-col>
+                          <b-col cols="2" class="p-0"
+                            ><img
+                              src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/02/486062/3.jpg?7638"
+                              alt="product_image_name-Fashion-Elegant Designer Athletic Sneakers V2- Gold &amp; Black-1"
+                            />
+                          </b-col> -->
+                        </b-row>
+                      </div>
+                    </div>
+                    <hr />
+                    <h5 class="custom-card-title">share this product</h5>
+                    <div class="product-social-page">
+                      <a href="">
+                        <font-awesome-layers
+                          full-width
+                          class=""
+                          style="font-size: 1rem;"
+                        >
+                          <font-awesome-icon :icon="['fab', 'facebook-f']" />
+                        </font-awesome-layers>
+                      </a>
+                      <a href="">
+                        <font-awesome-layers
+                          full-width
+                          class=""
+                          style="font-size: 1rem;"
+                        >
+                          <font-awesome-icon :icon="['fab', 'twitter']" />
+                        </font-awesome-layers>
+                      </a>
+                    </div>
                   </b-col>
-                  <b-col lg="8" md="6" class="p-0 pl-4 mb-3">
+                  <b-col lg="8" md="6" class="p-0 pl-4">
                     <h5>
                       {{ product.name }}
                     </h5>
+                    <div>
+                      <font-awesome-layers
+                        full-width
+                        class=""
+                        style="font-size: .8rem; color: #f6b01e;"
+                      >
+                        <font-awesome-icon icon="star" />
+                      </font-awesome-layers>
+                      <font-awesome-layers
+                        full-width
+                        class=""
+                        style="font-size: .8rem; color: #f6b01e;"
+                      >
+                        <font-awesome-icon icon="star" />
+                      </font-awesome-layers>
+                      <font-awesome-layers
+                        full-width
+                        class=""
+                        style="font-size: 0.8rem; color: #f6b01e;"
+                      >
+                        <font-awesome-icon icon="star" />
+                      </font-awesome-layers>
+                      <font-awesome-layers
+                        full-width
+                        class=""
+                        style="font-size: .8rem; color: #f6b01e;"
+                      >
+                        <font-awesome-icon icon="star" />
+                      </font-awesome-layers>
+                      <font-awesome-layers
+                        full-width
+                        class=""
+                        style="font-size: .8rem; color: #f6b01e"
+                      >
+                        <font-awesome-icon icon="star" />
+                      </font-awesome-layers>
+                      <a href="" style="font-size: .95rem;"
+                        >&nbsp;(183 ratings)</a
+                      >
+                    </div>
                     <hr />
                     <div>₦ {{ product.price }}</div>
+                    <strike>₦ 7,650 - ₦ 7,890</strike>
+                    <hr class="mb-1" />
+                    <div>
+                      <div
+                        class="d-flex align-items-center justify-content-between"
+                      >
+                        <h5 class="custom-card-title">promotion</h5>
+                        <h6>Size Guide</h6>
+                      </div>
+                      <div class="shoe-size-grade">
+                        <label for="">42</label>
+                        <label for="">43</label>
+                        <label for="">44</label>
+                        <label for="">45</label>
+                      </div>
+                    </div>
                     <div class="mt-3">
-                      <b-button variant="danger">
-                        add to cart
+                      <b-button block variant="danger" class="py-2">
+                        <div style="line-height: 24px;">
+                          <font-awesome-layers
+                            full-width
+                            class="float-left"
+                            style="font-size: 1.3em;"
+                          >
+                            <font-awesome-icon icon="shopping-cart" />
+                          </font-awesome-layers>
+                          <div style="">
+                            ADD TO CART
+                          </div>
+                        </div>
                       </b-button>
                     </div>
+                    <hr />
+                    <ul class="promotion p-0">
+                      <li>
+                        <a href="#"
+                          >Stay Safe, Go cashless with JumiaPay. Get additional
+                          5% off capped at N500 (Jumia APP only)</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Enjoy unlimited Free Delivery with Jumia Prime</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          >Buy airtime and data on Jumia One and get up to N500
+                          cash back. Use code WELCOME50</a
+                        >
+                      </li>
+                    </ul>
                   </b-col>
                 </b-row>
               </b-card>
@@ -34,7 +167,22 @@
           <b-row class="mb-3">
             <b-col cols="12">
               <b-card>
-                <h6>product details</h6>
+                <h5 class="custom-card-title">product details</h5>
+                <hr />
+                <p>
+                  <b>This footwear</b> is classy and gets the attention of
+                  onlookers with trendy and gorgeous finish. It pairs well with
+                  both matching and off colour outfits. The heel is evenly
+                  balanced for comfortable movement. This collection has
+                  versatility and comfort you would always require in a shoe.
+                </p>
+              </b-card>
+            </b-col>
+          </b-row>
+          <b-row class="mb-3">
+            <b-col cols="12">
+              <b-card>
+                <h5 class="custom-card-title">Specification</h5>
                 <hr />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -62,35 +210,7 @@
           <b-row class="mb-3">
             <b-col cols="12">
               <b-card>
-                <h6>Specification</h6>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo sequi dolor optio distinctio, cumque blanditiis
-                  corporis nam qui maxime dolore, facere, eligendi quisquam rem
-                  aperiam voluptatem vel facilis ab quidem? Sunt, provident!
-                  Blanditiis iure aliquid debitis voluptatum voluptas rem
-                  tempora deserunt soluta ea, harum voluptate dicta asperiores,
-                  distinctio minus cumque consequuntur. Maxime quo in minus
-                  neque magni est eaque tempore! Similique culpa inventore alias
-                  omnis vel. Enim, repellat. Quia, odit amet. Earum libero modi
-                  accusamus ab quibusdam expedita ratione animi excepturi
-                  molestiae harum, nihil a rerum delectus id quo est!
-                  Consequatur id ipsam vel similique inventore sint, perferendis
-                  quibusdam voluptas quos dicta rem iusto error maxime quia modi
-                  qui sed nihil tempora exercitationem tenetur ad perspiciatis!
-                  Deserunt dolore esse dolorum? Qui, repudiandae deleniti esse
-                  debitis porro voluptatem omnis rerum, a est laudantium vel ut
-                  sapiente quis, voluptas repellat expedita nisi? Numquam eos
-                  libero eligendi cum veniam optio odio repellendus eaque.
-                </p>
-              </b-card>
-            </b-col>
-          </b-row>
-          <b-row class="mb-3">
-            <b-col cols="12">
-              <b-card>
-                <h6>Customers Feedback</h6>
+                <h5 class="custom-card-title">Customers Feedback</h5>
                 <hr />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -157,19 +277,71 @@
 .card.remove-p-card-body .card-body {
   padding: 0;
 }
+.shoe-size-grade label {
+  min-width: 40px;
+  border: 1px solid #ededed;
+  padding: 8px;
+  border-radius: 2px;
+  margin: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+.shoe-size-grade label:first-child {
+  margin-left: 0;
+}
+.promotion {
+  margin: 0;
+}
+.promotion li {
+  list-style: none;
+  padding: 8px 0;
+}
+.promotion li a {
+  font-size: 0.875rem;
+}
+.custom-card-title {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 8 0;
+}
+.custom-thumb {
+  position: relative;
+}
+.thumbholder {
+  margin-top: 8px;
+}
+.thumb-custom-p .col-2 {
+  padding: 8px !important;
+  padding-left: 0 !important;
+}
+.product-social-page a {
+  display: inline-block;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+}
+.product-social-page a:first-child {
+  margin-right: 8px;
+}
 </style>
 <script>
 export default {
   name: 'app',
   data() {
-    return {
-      productdetails: []
-    }
+    return {}
   },
+
   computed: {
     product() {
+      console.log(this.$store.state.selectedProduct.images[0].name)
       return this.$store.state.selectedProduct
     }
   }
 }
 </script>
++-

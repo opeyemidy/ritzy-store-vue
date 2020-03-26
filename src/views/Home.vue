@@ -10,7 +10,7 @@
             lg="2"
             md="3"
             sm="3"
-            class=" p-0 d-none d-md-block category-wrapper"
+            class=" p-0 pl-3 d-none d-md-block category-wrapper"
           >
             <b-card-group>
               <b-card
@@ -460,7 +460,8 @@ export default {
       categoriesclass: '',
       contentClass: '',
       slide: 0,
-      sliding: null
+      sliding: null,
+      smallScreen: true
     }
   },
   components: {
@@ -480,25 +481,18 @@ export default {
       this.$store.commit('setSelectedProductValue', product)
       this.$router.push({ path: '/product' })
     },
+    onResize() {
+      if (window.innerWidth < 768) {
+        this.smallScreen = true
+      } else {
+        this.smallScreen = false
+      }
+    },
     onSlideStart(slide) {
       this.sliding = true
     },
     onSlideEnd(slide) {
       this.sliding = false
-    },
-    onResize() {
-      if (window.innerWidth < 992) {
-        this.rescontclass = 'px-5 py-3'
-        this.categoriesclass = 'p-0 custom-container md-mt-height'
-        ;('p-0 pl-0 d-none d-sm-none d-md-block category-wrapper col-sm-3 col-md-3 col-lg-2')
-        this.carouselclass = 'px-3 pb-3'
-        this.contentClass = 'md-mt-height'
-        this.rightclass = ''
-        this.productrowclass = ''
-      } else {
-        this.categoriesclass = 'p-0 pl-3 d-none d-sm-none category-wrapper'
-        this.contentClass = 'p-0 content-mt custom-container'
-      }
     }
   },
   created() {
@@ -526,7 +520,7 @@ export default {
   max-width: 1200px;
 }
 .content-mt {
-  margin-top: 62px;
+  margin-top: 56px;
 }
 .product-sm-px {
   padding: 0 0.5rem !important;
