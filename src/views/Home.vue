@@ -10,7 +10,7 @@
             lg="2"
             md="3"
             sm="3"
-            class="d-none d-md-block category-wrapper"
+            class=" p-0 d-none d-md-block category-wrapper"
           >
             <b-card-group>
               <b-card
