@@ -332,18 +332,22 @@ import { mapState } from 'vuex'
 export default {
   name: 'app',
   data() {
-    return {}
+    return {
+      product: null
+    }
   },
 
   computed: {
-    ...mapState(['products']),
-    product(item) {
-      return (item = this.products.filter(function(hero) {
-        console.log(hero.id == 1)
-      }))
-    },
-    methods: {}
-  }
+    ...mapState(['products'])
+  },
+  created() {
+    this.product = function product() {
+      return this.products.filter(item => {
+        return item.id === parseInt(this.$route.params.id)
+      })
+    }
+  },
+  methods: {}
 }
 </script>
 +-
