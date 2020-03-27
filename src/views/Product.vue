@@ -1,6 +1,7 @@
 <template>
   <div class="product">
-    <b-container fluid class="container-color px-0">
+    {{ product() }}
+    <!-- <b-container fluid class="container-color px-0">
       <b-row class="remove-row-margin custom-row-w mx-auto">
         <b-col lg="9" md="12">
           <b-row class="mb-3">
@@ -249,7 +250,7 @@
           >
         </b-col>
       </b-row>
-    </b-container>
+    </b-container> -->
   </div>
 </template>
 <style scoped>
@@ -327,6 +328,7 @@
 }
 </style>
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'app',
   data() {
@@ -334,10 +336,13 @@ export default {
   },
 
   computed: {
-    product() {
-      console.log(this.$store.state.selectedProduct)
-      return this.$store.state.selectedProduct
-    }
+    ...mapState(['products']),
+    product(item) {
+      return (item = this.products.filter(function(hero) {
+        console.log(hero.id == 1)
+      }))
+    },
+    methods: {}
   }
 }
 </script>
