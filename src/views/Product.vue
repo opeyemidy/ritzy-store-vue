@@ -24,17 +24,6 @@
                             class="p-0"
                             ><img :src="image.name" alt=""
                           /></b-col>
-                          <!-- <b-col cols="2" class="p-0"
-                            ><img
-                              src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/02/486062/2.jpg?7638"
-                              alt="product_image_name-Fashion-Elegant Designer Athletic Sneakers V2- Gold &amp; Black-1"
-                          /></b-col>
-                          <b-col cols="2" class="p-0"
-                            ><img
-                              src="https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/02/486062/3.jpg?7638"
-                              alt="product_image_name-Fashion-Elegant Designer Athletic Sneakers V2- Gold &amp; Black-1"
-                            />
-                          </b-col> -->
                         </b-row>
                       </div>
                     </div>
@@ -97,7 +86,7 @@
                       <font-awesome-layers
                         full-width
                         class=""
-                        style="font-size: .8rem; color: #f6b01e"
+                        style="font-size: .8rem; color: #c7c7cd"
                       >
                         <font-awesome-icon icon="star" />
                       </font-awesome-layers>
@@ -108,8 +97,8 @@
                     <hr />
                     <div>₦ {{ product.price }}</div>
                     <strike>₦ 7,650 - ₦ 7,890</strike>
-                    <hr class="mb-1" />
-                    <div>
+                    <div v-if="product.size">
+                      <hr class="mb-1" />
                       <div
                         class="d-flex align-items-center justify-content-between"
                       >
@@ -117,10 +106,12 @@
                         <h6>Size Guide</h6>
                       </div>
                       <div class="shoe-size-grade">
-                        <label for="">42</label>
-                        <label for="">43</label>
-                        <label for="">44</label>
-                        <label for="">45</label>
+                        <label
+                          v-for="(size, index) in product.size"
+                          :key="index"
+                          for=""
+                          >{{ size }}</label
+                        >
                       </div>
                     </div>
                     <div class="mt-3">
@@ -170,40 +161,43 @@
                 <h5 class="custom-card-title">product details</h5>
                 <hr />
                 <p>
-                  <b>This footwear</b> is classy and gets the attention of
-                  onlookers with trendy and gorgeous finish. It pairs well with
-                  both matching and off colour outfits. The heel is evenly
-                  balanced for comfortable movement. This collection has
-                  versatility and comfort you would always require in a shoe.
+                  {{ product.details }}
                 </p>
               </b-card>
             </b-col>
           </b-row>
           <b-row class="mb-3">
-            <b-col cols="12">
+            <b-col cols="12" v-if="product.specification">
               <b-card>
                 <h5 class="custom-card-title">Specification</h5>
                 <hr />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo sequi dolor optio distinctio, cumque blanditiis
-                  corporis nam qui maxime dolore, facere, eligendi quisquam rem
-                  aperiam voluptatem vel facilis ab quidem? Sunt, provident!
-                  Blanditiis iure aliquid debitis voluptatum voluptas rem
-                  tempora deserunt soluta ea, harum voluptate dicta asperiores,
-                  distinctio minus cumque consequuntur. Maxime quo in minus
-                  neque magni est eaque tempore! Similique culpa inventore alias
-                  omnis vel. Enim, repellat. Quia, odit amet. Earum libero modi
-                  accusamus ab quibusdam expedita ratione animi excepturi
-                  molestiae harum, nihil a rerum delectus id quo est!
-                  Consequatur id ipsam vel similique inventore sint, perferendis
-                  quibusdam voluptas quos dicta rem iusto error maxime quia modi
-                  qui sed nihil tempora exercitationem tenetur ad perspiciatis!
-                  Deserunt dolore esse dolorum? Qui, repudiandae deleniti esse
-                  debitis porro voluptatem omnis rerum, a est laudantium vel ut
-                  sapiente quis, voluptas repellat expedita nisi? Numquam eos
-                  libero eligendi cum veniam optio odio repellendus eaque.
-                </p>
+                <b-row>
+                  <b-col
+                    v-for="item in product.specification"
+                    :key="item.heading"
+                    lg="6"
+                    md="6"
+                    sm="12"
+                    class="mb-3"
+                  >
+                    <b-card style="height: 100%">
+                      <template v-slot:header>
+                        <h5 class="mb-0 custom-card-title">
+                          {{ item.heading }}
+                        </h5>
+                      </template>
+                      <b-card-text>
+                        <ul
+                          v-for="(list, index) in item.list"
+                          :key="index"
+                          class="m-0 spec-list px-0"
+                        >
+                          <li>{{ list }}</li>
+                        </ul>
+                      </b-card-text>
+                    </b-card>
+                  </b-col>
+                </b-row>
               </b-card>
             </b-col>
           </b-row>
@@ -328,6 +322,9 @@
 .product-social-page a:first-child {
   margin-right: 8px;
 }
+.spec-list li {
+  list-style: none;
+}
 </style>
 <script>
 export default {
@@ -338,7 +335,7 @@ export default {
 
   computed: {
     product() {
-      console.log(this.$store.state.selectedProduct.images[0].name)
+      console.log(this.$store.state.selectedProduct)
       return this.$store.state.selectedProduct
     }
   }
