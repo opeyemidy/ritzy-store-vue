@@ -1,7 +1,6 @@
 <template>
   <div class="product">
-    {{ product() }}
-    <!-- <b-container fluid class="container-color px-0">
+    <b-container fluid class="container-color px-0">
       <b-row class="remove-row-margin custom-row-w mx-auto">
         <b-col lg="9" md="12">
           <b-row class="mb-3">
@@ -250,7 +249,7 @@
           >
         </b-col>
       </b-row>
-    </b-container> -->
+    </b-container>
   </div>
 </template>
 <style scoped>
@@ -328,24 +327,20 @@
 }
 </style>
 <script>
-import { mapState } from 'vuex'
 export default {
   name: 'app',
   data() {
     return {
-      product: null
+      product: []
     }
   },
 
-  computed: {
-    ...mapState(['products'])
-  },
+  computed: {},
   created() {
-    this.product = function product() {
-      return this.products.filter(item => {
-        return item.id === parseInt(this.$route.params.id)
-      })
-    }
+    this.product = this.$store.state.products.filter(item => {
+      return item.id === parseInt(this.$route.params.id)
+    })
+    // console.log(this.productItem);
   },
   methods: {}
 }
