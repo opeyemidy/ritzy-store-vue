@@ -1,6 +1,11 @@
 <template>
   <div class="product">
-    <b-container fluid class="container-color px-0">
+    <b-container
+      fluid
+      class="container-color px-0"
+      v-for="product in productItem"
+      :key="product.id"
+    >
       <b-row class="remove-row-margin custom-row-w mx-auto">
         <b-col lg="9" md="12">
           <b-row class="mb-3">
@@ -331,18 +336,16 @@ export default {
   name: 'app',
   data() {
     return {
-      product: []
+      productItem: []
     }
   },
 
   computed: {},
   created() {
-    this.product = this.$store.state.products.filter(item => {
+    this.productItem = this.$store.state.products.filter(item => {
       return item.id === parseInt(this.$route.params.id)
     })
-    // console.log(this.productItem);
-  },
-  methods: {}
+    console.log(this.productItem)
+  }
 }
 </script>
-+-
