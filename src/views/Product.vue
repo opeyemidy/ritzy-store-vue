@@ -345,7 +345,26 @@ export default {
     this.productItem = this.$store.state.products.filter(item => {
       return item.id === parseInt(this.$route.params.id)
     })
-    console.log(this.productItem)
   }
+  // beforeRouteEnter(to, from, next) {
+  //   if ($route.params.id) {
+  //     next()
+  //   } else {
+  //     next('/')
+  //   }
+  //   //   })
+  //   // console.log('Entering product', to.params.id)
+  //   // // to.params.myCustomizations = {}
+  // }
+  // beforeRouteLeave(to, from, next) {
+  //   const answer = window.confirm(
+  //     'Do you really want to leave? you have unsaved changes!'
+  //   )
+  //   if (answer) {
+  //     next()
+  //   } else {
+  //     next(false)
+  //   }
+  // }
 }
 </script>

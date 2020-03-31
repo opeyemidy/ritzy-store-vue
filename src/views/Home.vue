@@ -473,10 +473,6 @@ export default {
     ...mapState(['products', 'categories'])
   },
   methods: {
-    // gotoProduct(product) {
-    //   this.$store.commit('setSelectedProductValue', product)
-    //   this.$router.push({ path: '/product' })
-    // },
     onResize() {
       if (window.innerWidth < 768) {
         this.smallScreen = true
@@ -497,6 +493,11 @@ export default {
 
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
+  },
+  watch: {
+    $route(to, from) {
+      console.log('route switched')
+    }
   }
 }
 </script>
