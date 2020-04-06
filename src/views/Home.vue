@@ -24,7 +24,7 @@
                     style="border: none; font-size: 16px; padding: 0.3rem 1.25rem ;"
                     v-for="item in categories"
                     :key="item.title"
-                    href="#some-link"
+                    :href="`/category/${item.title}`"
                     class="h5"
                   >
                     <!-- <span><b-icon icon="alert-triangle"></b-icon></span> -->
@@ -118,7 +118,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a @click="gotoProduct(product)" class="product-link">
+                      <a :href="`/product/${product.id}`" class="product-link">
                         <b-card>
                           <img
                             :src="product.pics"
@@ -452,6 +452,7 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -469,18 +470,12 @@ export default {
     Footer
   },
   computed: {
+    ...mapState(['categories']),
     products() {
-      return this.$store.state.products
-    },
-    categories() {
-      return this.$store.state.categories
+      return this.$store.getters.filterProducts
     }
   },
   methods: {
-    gotoProduct(product) {
-      this.$store.commit('setSelectedProductValue', product)
-      this.$router.push({ path: '/product' })
-    },
     onResize() {
       if (window.innerWidth < 768) {
         this.smallScreen = true
@@ -501,6 +496,11 @@ export default {
 
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
+  },
+  watch: {
+    $route(to, from) {
+      console.log('route switched')
+    }
   }
 }
 </script>

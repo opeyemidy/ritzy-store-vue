@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Product from '../views/Product.vue'
+import Category from '../views/Category.vue'
 
 Vue.use(VueRouter)
 
@@ -18,9 +19,22 @@ const routes = [
     component: About
   },
   {
-    path: '/product',
+    path: '/product/:id',
     name: 'Product',
     component: Product
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    component: Product,
+    beforeEnter: (to, from, next) => {
+      next('/')
+    }
+  },
+  {
+    path: '/category',
+    name: 'Category',
+    component: Category
   }
 ]
 
