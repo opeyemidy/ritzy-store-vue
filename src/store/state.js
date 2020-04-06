@@ -3,7 +3,7 @@ export default {
     { title: 'Fashion', link: 'fddff' },
     { title: 'Computing', link: 'dffwe' },
     { title: 'Phones & tablets', link: 'fffdfdf' },
-    { title: 'Grocery', link: 'fffdfdf' },
+    { title: 'Gaming', link: 'fffdfdf' },
     { title: 'Health & Beauty', link: 'dfdfdff' }
   ],
   products: [
@@ -53,7 +53,8 @@ export default {
             'Weight (kg): 0.75'
           ]
         }
-      ]
+      ],
+      category: 'fashion'
     },
     {
       id: 2,
@@ -406,5 +407,5 @@ export default {
       ]
     }
   ],
-  selectedProduct: null
+  filteredProduct: null
 }

@@ -1,5 +1,5 @@
 export default {
-  setSelectedProductValue(state, product) {
-    state.selectedProduct = product
-  }
+  // productFiltered(state) {
+  //   state.filteredProduct = state.products.splice(0, 3)
+  // }
 }

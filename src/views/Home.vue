@@ -24,7 +24,7 @@
                     style="border: none; font-size: 16px; padding: 0.3rem 1.25rem ;"
                     v-for="item in categories"
                     :key="item.title"
-                    href="#some-link"
+                    :href="`/category/${item.title}`"
                     class="h5"
                   >
                     <!-- <span><b-icon icon="alert-triangle"></b-icon></span> -->
@@ -470,7 +470,10 @@ export default {
     Footer
   },
   computed: {
-    ...mapState(['products', 'categories'])
+    ...mapState(['categories']),
+    products() {
+      return this.$store.getters.filterProducts
+    }
   },
   methods: {
     onResize() {

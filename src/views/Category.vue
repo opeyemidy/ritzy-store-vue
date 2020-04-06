@@ -12,7 +12,7 @@
           cols="6"
           v-for="product in products"
           :key="product.name"
-          class="p-0 px-3 pb-3"
+          class="p-0 px-2 pb-3 mb-5"
         >
           <a :href="`/product/${product.id}`" class="product-link">
             <div class="product-postion">
@@ -26,7 +26,7 @@
                     {{ product.name }}
                   </p>
                   <div class="d-flex justify-content-between">
-                    <b-card-text>
+                    <b-card-text class="mb-0">
                       ₦ {{ product.price }}
                       <strike class="small"
                         >₦ {{ product.price }}</strike
@@ -35,10 +35,52 @@
                     <div>32%</div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-center my-3">
-                  <b-button class="buy-btn" size="sm" variant="danger"
-                    >BUY NOW</b-button
+                <div class="">
+                  <font-awesome-layers
+                    full-width
+                    class=""
+                    style="font-size: .8rem; color: #f6b01e;"
                   >
+                    <font-awesome-icon icon="star" />
+                  </font-awesome-layers>
+                  <font-awesome-layers
+                    full-width
+                    class=""
+                    style="font-size: .8rem; color: #f6b01e;"
+                  >
+                    <font-awesome-icon icon="star" />
+                  </font-awesome-layers>
+                  <font-awesome-layers
+                    full-width
+                    class=""
+                    style="font-size: 0.8rem; color: #f6b01e;"
+                  >
+                    <font-awesome-icon icon="star" />
+                  </font-awesome-layers>
+                  <font-awesome-layers
+                    full-width
+                    class=""
+                    style="font-size: .8rem; color: #f6b01e;"
+                  >
+                    <font-awesome-icon icon="star" />
+                  </font-awesome-layers>
+                  <font-awesome-layers
+                    full-width
+                    class=""
+                    style="font-size: .8rem; color: #c7c7cd"
+                  >
+                    <font-awesome-icon icon="star" />
+                  </font-awesome-layers>
+                  <a href="" style="font-size: .95rem; color: #606060;"
+                    >&nbsp;(183 ratings)</a
+                  >
+                </div>
+                <div class="buy-btn">
+                  <div class="d-flex justify-content-center my-3">
+                    <b-button class="" size="sm" variant="danger"
+                      >BUY NOW</b-button
+                    >
+                  </div>
                 </div>
               </b-card>
             </div>
@@ -79,23 +121,20 @@ export default {
   max-height: 2.824em;
 }
 .buy-btn {
-  display: block;
+  display: none;
 }
 .product-link:hover {
   text-decoration: none;
 }
-/* .product-link:hover .buy-btn {
+.product-link:hover .buy-btn {
   display: block;
   text-decoration: none;
 }
 .product-link:hover .card-postion {
   z-index: 999;
 }
-.card-postion {
-  position: absolute;
-}
 .product-postion {
   position: relative;
   height: 335px;
-} */
+}
 </style>
