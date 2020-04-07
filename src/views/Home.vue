@@ -497,11 +497,6 @@ export default {
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
   },
-  watch: {
-    $route(to, from) {
-      console.log('route switched')
-    }
-  }
 }
 </script>
 <style scoped>
