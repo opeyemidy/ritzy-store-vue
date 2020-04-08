@@ -11,37 +11,37 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: About,
   },
   {
-    path: '/product/:id',
-    name: 'Product',
-    component: Product
-  },
-  {
-    path: '/product',
+    path: '/product/',
     name: 'Product',
     component: Product,
-    beforeEnter: (to, from, next) => {
-      next('/')
-    }
   },
+  // {
+  //   path: '/product',
+  //   name: 'Product',
+  //   component: Product,
+  //   beforeEnter: (to, from, next) => {
+  //     next('/')
+  //   }
+  // },
   {
     path: '/category',
     name: 'Category',
-    component: Category
-  }
+    component: Category,
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router

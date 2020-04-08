@@ -452,7 +452,6 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
 export default {
   name: 'Home',
   data() {
@@ -469,7 +468,9 @@ export default {
     Footer,
   },
   computed: {
-    ...mapState(['categories']),
+    categories() {
+      return this.$store.state.categories
+    },
     products() {
       return this.$store.state.products
     },
