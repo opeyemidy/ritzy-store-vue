@@ -6,11 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     categories: [
-      { title: 'Fashion', link: 'fddff' },
-      { title: 'Computing', link: 'dffwe' },
-      { title: 'Phones & tablets', link: 'fffdfdf' },
-      { title: 'Grocery', link: 'fffdfdf' },
-      { title: 'Health & Beauty', link: 'dfdfdff' }
+      { title: 'Fashion', link: 'fashion' },
+      { title: 'Computing', link: 'computing' },
+      { title: 'Phones & tablets', link: 'phones-tablets' },
+      { title: 'Grocery', link: 'grocery' },
+      { title: 'Health & Beauty', link: 'health-beauty' },
     ],
     products: [
       {
@@ -20,16 +20,16 @@ export default new Vuex.Store({
         images: [
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/1.jpg?7638'
+              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/1.jpg?7638',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/2.jpg?7638'
+              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/2.jpg?7638',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/3.jpg?7638'
-          }
+              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/02/486062/3.jpg?7638',
+          },
         ],
         price: 2500,
         size: [42, 43, 44, 45, 41, 40, 39],
@@ -43,8 +43,8 @@ export default new Vuex.Store({
               'Size: Ankle length',
               'Material: Denim',
               'Style: Classy and elegant',
-              'Easy to maintain'
-            ]
+              'Easy to maintain',
+            ],
           },
           {
             heading: 'specifications',
@@ -56,10 +56,10 @@ export default new Vuex.Store({
               'Color: Gold',
               'Main Material: Canvas',
               'Product Line: KODDS',
-              'Weight (kg): 0.75'
-            ]
-          }
-        ]
+              'Weight (kg): 0.75',
+            ],
+          },
+        ],
       },
       {
         id: 2,
@@ -69,20 +69,20 @@ export default new Vuex.Store({
         images: [
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/1.jpg?3486'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/1.jpg?3486',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/2.jpg?5417'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/2.jpg?5417',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/3.jpg?5000'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/3.jpg?5000',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/4.jpg?5905'
-          }
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/08/26775/4.jpg?5905',
+          },
         ],
         price: 5000,
         details:
@@ -95,12 +95,12 @@ export default new Vuex.Store({
               'Colour: Navy Blue',
               'Quality Print',
               'Pairing: Denim/Chinos',
-              'Style: Casual'
-            ]
+              'Style: Casual',
+            ],
           },
           {
             heading: "what's in the box",
-            list: ['1 God Over Everything Print TShirt']
+            list: ['1 God Over Everything Print TShirt'],
           },
           {
             heading: 'specifications',
@@ -115,10 +115,10 @@ export default new Vuex.Store({
               'Production Country: Nigeria',
               'Product Line: Chrysolite Designs Stores',
               'Size (L x W x H cm): 26 x 26',
-              'Weight (kg): 0.2'
-            ]
-          }
-        ]
+              'Weight (kg): 0.2',
+            ],
+          },
+        ],
       },
       {
         id: 3,
@@ -139,8 +139,8 @@ export default new Vuex.Store({
               '2L Bottle rack',
               'Reversible door',
               'Separate chiller compartment',
-              'Can dispenser and store rack optional'
-            ]
+              'Can dispenser and store rack optional',
+            ],
           },
           {
             heading: 'specifications',
@@ -151,28 +151,28 @@ export default new Vuex.Store({
               'Main Material: Metal',
               'Model: HS121L',
               'Product Line: Somotex Nigeria.',
-              'Weight (kg): 15'
-            ]
-          }
+              'Weight (kg): 15',
+            ],
+          },
         ],
         images: [
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/1.jpg?7722'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/1.jpg?7722',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/2.jpg?7722'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/2.jpg?7722',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/3.jpg?7722'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/3.jpg?7722',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/4.jpg?7722'
-          }
-        ]
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/63/863164/4.jpg?7722',
+          },
+        ],
       },
       {
         id: 4,
@@ -184,42 +184,42 @@ export default new Vuex.Store({
         images: [
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/1.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/1.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/2.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/2.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/3.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/3.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/4.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/4.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/5.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/5.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/6.jpg?4437'
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/6.jpg?4437',
           },
           {
             name:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/7.jpg?4437'
-          }
-        ]
-      }
+              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/89/783761/7.jpg?4437',
+          },
+        ],
+      },
     ],
-    selectedProduct: null
+    selectedProduct: null,
   },
   mutations: {
     setSelectedProductValue(state, product) {
       state.selectedProduct = product
-    }
+    },
   },
   actions: {},
-  modules: {}
+  modules: {},
 })
