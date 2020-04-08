@@ -472,7 +472,7 @@ export default {
   computed: {
     ...mapState(['categories']),
     products() {
-      return this.$store.getters.filterProducts
+      return this.$store.state.products
     },
   },
   methods: {
