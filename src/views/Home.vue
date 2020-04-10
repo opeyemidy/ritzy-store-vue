@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-    <div style="" class="wrapper">
+    <div class="wrapper">
       <b-container
         fluid
         class="p-0 content-mt custom-container d-none d-md-block"
+        v-if="!smallScreen"
       >
         <b-row class="m-0 py-3">
           <b-col
@@ -222,37 +223,13 @@
           </b-col>
         </b-row>
       </b-container>
-      <b-container fluid class="p-0 content-mt-sm custom-container d-md-none">
+      <b-container
+        v-else
+        fluid
+        class="p-0 content-mt-sm custom-container d-md-none"
+      >
         <b-row class="m-0 pb-3">
-          <b-col
-            lg="2"
-            md="3"
-            sm="3"
-            class="d-none d-md-block category-wrapper"
-          >
-            <b-card-group>
-              <b-card
-                no-body
-                style="border: none; font-size: 16px;"
-                header="Categories"
-                class="text-left h3"
-              >
-                <b-list-group class="text-left">
-                  <b-list-group-item
-                    style="border: none; font-size: 16px; padding: 0.3rem 1.25rem ;"
-                    v-for="item in categories"
-                    :key="item.title"
-                    href="#some-link"
-                    class="h5"
-                  >
-                    <!-- <span><b-icon icon="alert-triangle"></b-icon></span> -->
-                    {{ item.title }}
-                  </b-list-group-item>
-                </b-list-group>
-              </b-card>
-            </b-card-group>
-          </b-col>
-          <b-col lg="8" sm="12" md="9">
+          <b-col>
             <b-row class="pb-3">
               <b-carousel
                 id="carousel-1"
@@ -329,8 +306,7 @@
                 <b-card header="Featured Products" class="my-card-title">
                   <b-row>
                     <b-col
-                      lg="3"
-                      md="4"
+                      sm="4"
                       cols="6"
                       v-for="product in products"
                       :key="product.name"
@@ -343,9 +319,7 @@
                             style="width: 100%; margin-bottom: 1rem;"
                           />
                           <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
+                            <p class="product-title">{{ product.name }}</p>
                             <b-card-text> ₦ {{ product.price }} </b-card-text>
                           </div>
                         </b-card>
@@ -363,8 +337,7 @@
                 >
                   <b-row>
                     <b-col
-                      lg="3"
-                      md="4"
+                      sm="4"
                       cols="6"
                       v-for="product in products"
                       :key="product.name"
@@ -397,8 +370,7 @@
                 >
                   <b-row>
                     <b-col
-                      lg="3"
-                      md="4"
+                      sm="4"
                       cols="6"
                       v-for="product in products"
                       :key="product.name"
@@ -421,20 +393,6 @@
                     </b-col>
                   </b-row>
                 </b-card>
-              </b-col>
-            </b-row>
-          </b-col>
-          <b-col cols="2" class="p-0 pr-3 d-none d-sm-none d-lg-block">
-            <b-row class="m-0">
-              <b-col cols="12 p-0">
-                <b-card
-                  class="mb-3 card-right-height card-right-background"
-                ></b-card>
-              </b-col>
-              <b-col cols="12 p-0">
-                <b-card
-                  class="card-right-height card-right-background-2"
-                ></b-card>
               </b-col>
             </b-row>
           </b-col>
